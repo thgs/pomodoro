@@ -12,12 +12,11 @@ class Timer
     public function __construct(private int $minutes = 25)
     {
         $this->target = $minutes . ' minute';
-
     }
 
     public function start(): \DateTimeImmutable
     {
-        $this->startedAt = new \DateTime('now');
+        $this->startedAt = new \DateTimeImmutable('now');
         return DateTimeImmutable::createFromInterface($this->startedAt);
     }
 
@@ -27,7 +26,7 @@ class Timer
             return false;
         }
 
-        $now = new \DateTime('now');
+        $now = new \DateTimeImmutable('now');
         if ($now >= $this->startedAt->modify('+' . $this->target)) {
             return true;
         }
