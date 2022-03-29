@@ -1,0 +1,17 @@
+{
+    "name": "thgs/pomodoro",
+    "description": "A timer based on the pomodoro technique",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Thgs\\Pomodoro\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "thgs",
+            "email": "theogpl57@gmail.com"
+        }
+    ],
+    "require": {}
+}
