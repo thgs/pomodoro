@@ -13,5 +13,7 @@
             "email": "theogpl57@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^8"
+    }
 }
