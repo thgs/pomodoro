@@ -4,7 +4,13 @@ require_once 'vendor/autoload.php';
 
 use Thgs\Pomodoro\Timer;
 
-stream_set_blocking(STDIN, false);
+$currentSttyConfiguration = shell_exec('stty -g');
+register_shutdown_function(function () use (&$currentSttyConfiguration) {
+    shell_exec('stty ' . $currentSttyConfiguration);
+    e('Bye!');
+});
+
+system("stty -icanon");
 
 $pomodoroTimer = new Timer(25);
 $startedAt = $pomodoroTimer->start();
@@ -28,7 +34,6 @@ function processInput(string $input)
     $clean = strtolower(trim($input));
     switch ($clean) {
         case 'q':
-            e('Bye!');
             exit();
         default:
             return;
