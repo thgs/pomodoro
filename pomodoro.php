@@ -25,6 +25,8 @@ while (!$pomodoroTimer->hasFinished()) {
 
 $breakTimer = new Timer(5);
 $breakStartedAt = $breakTimer = $breakTimer->start();
+
+e('');
 e("Break started " . $breakStartedAt->format('H:i:s'));
 
 function processInput(string $input)
