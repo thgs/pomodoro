@@ -16,9 +16,9 @@ while (!$pomodoroTimer->hasFinished()) {
     if ($input = fgetc(STDIN)) {
         processInput($input);
     }
-    usleep(1000);
+    usleep(1000000);
     if ($dotTimer->hasFinished()) {
-        e('.');
+        echo '.';
         $dotTimer->start();
     }
 }
