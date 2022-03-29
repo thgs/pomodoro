@@ -47,6 +47,8 @@ function e(string $text): void
 
 function loop(Timer $timer)
 {
+    stream_set_blocking(STDIN, false);
+
     $dotTimer = new Timer(1);
     $dotTimer->start();
     while (!$timer->hasFinished()) {
